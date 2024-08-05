@@ -19,24 +19,7 @@
     font-size: 22px;
     line-height: 100%;
     letter-spacing: 2px;
-    position: relative;
 
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      border-radius: 50%;
-      width: 100%;
-      height: 1px;
-      background-color: $main-light-color;
-
-      transform: scale(0);
-      transform-origin: left;
-      transition: transform 0.5s;
-    }
-
-    &:hover::before {
-      transform: scale(1);
-    }
+    @include hover-line;
   }
 }

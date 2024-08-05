@@ -18,14 +18,38 @@
   }
 }
 
+@mixin hover-line {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    border-radius: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: $main-light-color;
+
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+  }
+
+  &:hover::before {
+    transform: scale(1);
+  }
+}
+
 @mixin pageGrid {
   --columns: 2;
+
   display: grid;
   column-gap: 20px;
   grid-template-columns: repeat(var(--columns), 1fr);
 
   @include onTablet {
-  --columns: 6;
+    --columns: 6;
+
     column-gap: 24px;
   }
 
