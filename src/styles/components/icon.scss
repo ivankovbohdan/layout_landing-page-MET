@@ -23,7 +23,6 @@
 
       .phone-number {
         cursor: pointer;
-        pointer-events: none;
         opacity: 0;
         position: absolute;
         right: 52px;
@@ -31,7 +30,7 @@
         min-width: 201px;
         color: $main-light-color;
         margin-bottom: 8px;
-        transition: opacity 2s;
+        transition: opacity 0.5s;
 
         &:nth-child(2) {
           top: 62px;
@@ -40,8 +39,6 @@
 
       &:hover .phone-number {
         opacity: 1;
-        pointer-events: all;
-        transition: none;
       }
     }
   }
