@@ -1,18 +1,42 @@
-.nav__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
 
-.nav__link {
-  color: inherit;
-  text-decoration: none;
-  display: block;
-  font-size: 22px;
-  line-height: 100%;
-  letter-spacing: 2px;
+  &__item {
+    line-height: 100%;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      border-radius: 50%;
+      width: 100%;
+      height: 1px;
+      background-color: $main-light-color;
+
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform 0.5s;
+    }
+
+    &:hover::before {
+      transform: scale(1);
+    }
+  }
 }

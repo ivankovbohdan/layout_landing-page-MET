@@ -1,0 +1,70 @@
+.contacts {
+  &__wrapper {
+    @include pageGrid;
+
+    row-gap: 48px;
+  }
+
+  &__address-block {
+    grid-column: span 2;
+
+    @include pageGrid;
+
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 48px;
+
+    @include onTablet {
+      grid-column: span 3;
+      margin-right: 75px;
+    }
+
+    @include onDesktop {
+      grid-column: span 7;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__form {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__address {
+    font-style: normal;
+  }
+
+  &__address-title {
+    margin: 0 0 16px;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  &__address-caption {
+    font-size: 14px;
+    line-height: 192%;
+    margin-bottom: 4px;
+    color: $main-dark-color;
+    display: block;
+  }
+
+  &__address-link {
+    text-decoration: none;
+    display: block;
+    font-weight: 700;
+    color: $accent-color;
+    position: relative;
+
+    @include hover (transform, scale(1.05));
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}

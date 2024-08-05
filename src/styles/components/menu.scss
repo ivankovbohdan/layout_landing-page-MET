@@ -1,54 +1,79 @@
 .menu {
+  z-index: 100;
   box-sizing: border-box;
   height: 100vh;
   background-color: $accent-color;
   font-weight: 700;
   text-transform: uppercase;
   color: $main-light-color;
-}
+  padding-bottom: 31px;
 
-.menu__top {
-  margin-bottom: 15px;
-}
+  &__top-bar {
+    margin-bottom: 15px;
+  }
 
-.menu__content {
-  padding: 0 20px 31px;
-}
+  &__nav {
+    margin-bottom: 32px;
+  }
 
-.menu__nav {
-  margin-bottom: 32px;
-}
+  &__phone-numbers {
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+  }
 
-.menu__phone-numbers {
-  margin: 0 0 16px;
-  padding: 0;
-  list-style: none;
-}
+  &__phone-item {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
 
-.menu__phone-item:not(:last-child) {
-  margin-bottom: 8px;
-}
+  &__phone-number {
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      border-radius: 50%;
+      width: 100%;
+      height: 1px;
+      background-color: $main-light-color;
 
-.menu__phone-number {
-  color: inherit;
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 169%;
-}
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform 0.5s;
+    }
 
-.menu__phone-number-title {
-  display: block;
-}
+    &:hover::before {
+      transform: scale(1);
+    }
+  }
 
-.menu__call-btn {
-  color: inherit;
-  text-decoration: none;
-  display: block;
-  width: fit-content;
-  font-size: 12px;
-  line-height: 133%;
-  letter-spacing: 2px;
+  &__call-btn {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    font-size: 12px;
+    line-height: 133%;
+    letter-spacing: 2px;
+    position: relative;
 
-  padding-bottom: 7px;
-  border-bottom: 1px solid $main-light-color;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      border-radius: 50%;
+      width: 100%;
+      height: 1px;
+      background-color: $main-light-color;
+
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform 0.5s;
+    }
+
+    &:hover::before {
+      transform: scale(1);
+    }
+  }
 }

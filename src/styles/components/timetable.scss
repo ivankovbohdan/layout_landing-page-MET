@@ -1,0 +1,25 @@
+.timetable {
+  display: flex;
+  gap: 24px;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__list-title {
+    font-weight: 700;
+  }
+
+  &__list-text {
+    transition:
+      color 0.5s;
+  }
+
+  &:hover {
+    .timetable__list-text {
+      color: $hover-color;
+    }
+  }
+}

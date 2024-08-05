@@ -1,17 +1,60 @@
 .icon {
+  cursor: pointer;
   display: block;
   width: 24px;
   height: 24px;
-}
 
-.icon--phone {
-  background-image: url('../images/icons/icon-phone.svg');
-}
+  @include hover (transform, scale(1.2));
 
-.icon--menu {
-  background-image: url('../images/icons/icon-burger-menu.svg');
-}
+  &--phone {
+    background-image: url('../images/icons/icon-phone.svg');
 
-.icon--close {
-  background-image: url('../images/icons/icon-close.svg');
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--phone--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: relative;
+
+      .phone-number {
+        cursor: pointer;
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+        right: 52px;
+        text-align: right;
+        min-width: 201px;
+        color: $main-light-color;
+        margin-bottom: 8px;
+        transition: opacity 2s;
+
+        &:nth-child(2) {
+          top: 62px;
+        }
+      }
+
+      &:hover .phone-number {
+        opacity: 1;
+        pointer-events: all;
+        transition: none;
+      }
+    }
+  }
+
+  &--menu {
+    background-image: url('../images/icons/icon-burger-menu.svg');
+
+    &:hover {
+      background-image: url('../images/icons/icon-burger-menu-hover.svg');
+    }
+  }
+
+  &--close {
+    background-image: url('../images/icons/icon-close.svg');
+  }
 }

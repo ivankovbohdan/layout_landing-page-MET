@@ -1,0 +1,65 @@
+.hours {
+  &__container {
+    @include pageGrid;
+  }
+
+  &__super-title {
+    display: block;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    color: $accent-color;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    text-align: left;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 5;
+    }
+  }
+
+  &__content {
+    display: grid;
+    row-gap: 23px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: span 5;
+    }
+  }
+
+  &__block-title {
+    margin: 0 0 16px;
+    font-size: 24px;
+    line-height: 125%;
+  }
+
+  &__timetable {
+    margin-bottom: 16px;
+  }
+
+  &__info-title {
+    margin: 0;
+  }
+
+  &__info-text {
+    margin: 0;
+
+    transition: color 0.5s;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}

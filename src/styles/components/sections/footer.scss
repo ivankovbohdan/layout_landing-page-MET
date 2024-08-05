@@ -1,0 +1,12 @@
+.footer {
+  background-image: url('../images/footer-bg-small.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  height: 180px;
+
+  @include onTablet {
+    background-image: url('../images/footer-bg-big.jpg');
+    height: 360px;
+  }
+}

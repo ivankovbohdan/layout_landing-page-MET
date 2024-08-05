@@ -1,0 +1,33 @@
+.exhibitions {
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  &__wrapper {
+    @include pageGrid;
+
+    row-gap: 48px;
+    margin-bottom: 40px;
+  }
+
+  &__exhibition {
+    grid-column: span var(--columns);
+  }
+
+  &__btn {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 2 / -2;
+    }
+
+    @include onDesktop {
+      grid-column: span 4 / 9;
+    }
+  }
+}

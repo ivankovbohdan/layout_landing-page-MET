@@ -1,0 +1,48 @@
+.form {
+  &__input {
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    padding: 14px 11px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 142%;
+    color: $main-dark-color;
+    margin-bottom: 16px;
+    background-color: #f8f8fa;
+    border: 1px solid transparent;
+    transition: border-color 0.5s;
+
+    &:last-child {
+      margin-bottom: 32px;
+    }
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 142%;
+      color: #7e7e83;
+      transition: color 0.5s;
+    }
+
+    &--message {
+      resize: none;
+      height: 144px;
+    }
+
+    &:hover,
+    &:focus {
+      &::placeholder {
+        color: $main-dark-color;
+      }
+    }
+
+    &:hover {
+      border-color: $main-dark-color;
+    }
+
+    &:focus {
+      border-color: $main-dark-color;
+    }
+  }
+}

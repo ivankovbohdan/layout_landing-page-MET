@@ -1,0 +1,52 @@
+.explore {
+  text-align: center;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include pageGrid;
+
+    row-gap: 48px;
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    transition:
+      box-shadow 0.5s,
+      transform 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 1px 4px 16px 0 $hover-color;
+    }
+
+    @include onTablet {
+      grid-column: 2 / -2;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__item-img {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  &__item-title {
+    color: $accent-color;
+    font-size: 24px;
+    line-height: 140%;
+    margin: 0 0 4px;
+  }
+
+  &__item-text {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    padding: 0 4px;
+  }
+}
